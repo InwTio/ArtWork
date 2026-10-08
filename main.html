@@ -18,12 +18,9 @@
         <button class="nav-link active" type="button" data-page="explore">
           <span class="nav-icon">◉</span> สำรวจ
         </button>
-        <button class="nav-link" type="button" data-page="commissions">
-          <span class="nav-icon">▰</span> คอมมิชชัน
-        </button>
       </nav>
-      <button class="button button-primary top-upload" type="button" data-page="upload">
-        <span aria-hidden="true">↥</span> โพสต์
+      <button class="button button-primary top-post" type="button">
+        <span aria-hidden="true">↥</span> โพสต์งาน
       </button>
     </header>
 
@@ -127,7 +124,7 @@
             <h1 id="detail-title"></h1>
             <p class="detail-description" id="detail-description"></p>
             <div class="detail-actions">
-              <button class="outline-button like-button" id="detail-like" type="button" aria-pressed="false">
+              <button class="outline-button like-button" id="detail-like" type="button" aria-pressed="false" disabled>
                 <span aria-hidden="true">♡</span> <span id="detail-likes"></span>
               </button>
               <span class="outline-button comment-count"><span aria-hidden="true">▢</span> 0</span>
@@ -136,45 +133,15 @@
             <section class="comments" aria-labelledby="comments-title">
               <h2 id="comments-title">ความคิดเห็น</h2>
               <p>ยังไม่มีความคิดเห็น</p>
-              <button class="comment-prompt" type="button" id="comment-prompt">เข้าสู่ระบบเพื่อแสดงความคิดเห็น</button>
+              <button class="comment-prompt" type="button" id="comment-prompt" disabled>เข้าสู่ระบบเพื่อแสดงความคิดเห็น</button>
             </section>
             <p class="tag-list" id="detail-tags"></p>
           </div>
         </div>
       </section>
 
-      <section class="page upload-page" id="upload-page" aria-labelledby="upload-title" hidden>
-        <div class="upload-layout">
-          <form class="post-form" id="post-form">
-            <h1 id="upload-title">โพสต์ผลงาน</h1>
-            <label for="art-title">ชื่อ</label>
-            <input id="art-title" name="title" type="text" placeholder="ตั้งชื่อผลงานของคุณ" maxlength="70" required>
-            <label for="art-description">คำอธิบาย</label>
-            <textarea id="art-description" name="description" placeholder="เพิ่มคำอธิบายสำหรับโพสต์ของคุณ" rows="4" maxlength="300"></textarea>
-            <label for="art-tags">แท็ก <span>(คั่นด้วยจุลภาค)</span></label>
-            <input id="art-tags" name="tags" type="text" placeholder="fantasy, cute, anime">
-            <label class="commission-toggle">
-              <input type="checkbox" name="available" checked>
-              <span>เปิดรับคอมมิชชันสำหรับผลงานนี้</span>
-            </label>
-            <button class="button button-primary publish-button" type="submit">เผยแพร่ผลงาน</button>
-          </form>
-          <div class="upload-preview" id="upload-preview">
-            <input id="art-file" type="file" accept="image/png,image/jpeg,image/webp" hidden>
-            <button class="upload-dropzone" id="upload-trigger" type="button" aria-label="เลือกไฟล์ผลงาน">
-              <img id="preview-image" alt="" hidden>
-              <span class="upload-placeholder" id="upload-placeholder">
-                <span class="image-icon" aria-hidden="true"><svg viewBox="0 0 72 56"><path d="m6 47 18-24 13 17 11-14 18 21z"/></svg></span>
-                <span>อัปโหลดผลงาน<br><small>PNG, JPEG หรือ WEBP</small></span>
-              </span>
-            </button>
-            <p class="upload-hint" id="upload-hint">เลือกภาพขนาดไม่เกิน 10 MB</p>
-          </div>
-        </div>
-      </section>
     </main>
 
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <dialog class="image-lightbox" id="image-lightbox" aria-label="ภาพผลงานแบบเต็มจอ">
       <form method="dialog" class="lightbox-close-form">
         <button class="lightbox-close" aria-label="ปิดภาพ" value="close">×</button>
